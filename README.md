@@ -1,9 +1,5 @@
 # list_tarefas
 
-Repositório para testar.
-
-Teste de diff -- Desfazer  
-
 A new Flutter application.
 
 ## Getting Started
