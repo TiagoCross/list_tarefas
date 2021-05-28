@@ -47,8 +47,11 @@ class _HomePageState extends State<HomePage> {
         child: _loading ? CircularProgressIndicator() : Text("Sem Tarefas!"),
         );
     } else {
-      return ListView.builder(
+      return ListView.separated(
         itemBuilder: _buildTaskItemSlidable,
+        separatorBuilder: (BuildContext context, index){
+          return Divider();
+        },
         itemCount: _taskList.length,
       );
     }
