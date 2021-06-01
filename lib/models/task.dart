@@ -19,19 +19,15 @@ class Task
     description: json["description"],
     idDone: json["idDone"] == 1,
   );
-  Map<String, dynamic> toMap() 
-  {
-    Map<String, dynamic> map = 
-    {
+  Map<String, dynamic> toMap() {
+    Map<String, dynamic> map = {
       "id": id,
       "title": title,
       "description": description,
       "idDone": idDone ? 1 : 0
     };
-    if (id != null)
-    {
-      map["id"] = id; 
-    }
+    if (id != null) map["id"] = id;
+    
     return map;
   }
   

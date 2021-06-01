@@ -53,12 +53,14 @@ class _TaskDialogState extends State<TaskDialog> {
               decoration: InputDecoration(labelText: "Titulo"),
               autofocus: true,
               validator: (value){
-                if (value.isEmpty) {
+                if (value.isEmpty){
                   return "Insira um titulo";
                 }
               },
             ),
             TextFormField(
+              keyboardType: TextInputType.multiline,
+              maxLines: 3,
               controller: _descriptionController,
               decoration: InputDecoration(labelText: "Descrição"),
               autofocus: true,

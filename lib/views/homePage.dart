@@ -59,17 +59,28 @@ class _HomePageState extends State<HomePage> {
   Widget _buildTaskItem(BuildContext context, int index)
   {
     final task = _taskList[index];
-    return CheckboxListTile(
-      value: task.idDone, 
-      title: Text(task.title),
-      subtitle: Text(task.description),
-      onChanged: (bool isChecked)
-      {
-        setState(() {
-          task.idDone = isChecked;
-        });
-        _helper.update(task);
-      });
+    return Flexible(child:  
+      CheckboxListTile(
+        value: task.idDone, 
+        title: Text(
+          task.title,
+          style: TextStyle(
+            fontSize: 14.0,
+            fontWeight: FontWeight.bold
+          ),
+        ),
+        subtitle: Text(
+          task.description,
+          overflow: TextOverflow.ellipsis),
+        onChanged: (bool isChecked)
+        {
+          setState(() {
+            task.idDone = isChecked;
+          });
+          _helper.update(task);
+        }
+      ),
+    );
   }
   Widget _buildTaskItemSlidable(BuildContext context, int index)
   {
